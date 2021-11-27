@@ -5,7 +5,10 @@
 
   'use strict';
 
-  const collapse = element => {
+
+  const enhanceMarkup = (accordion, index, config) => {
+
+    const collapse = element => {
       // get the height of the element's inner content, regardless of its actual size
       const height = element.scrollHeight;
 
@@ -27,9 +30,9 @@
               element.style.height = null;
           });
       });
-  };
+    };
 
-  const expand = element => {
+    const expand = element => {
       // get the height of the element's inner content, regardless of its actual size
       var height = element.scrollHeight;
 
@@ -44,36 +47,35 @@
 
       // when the next css transition finishes (which should be the one we just triggered)
       element.addEventListener('transitionend', tidyUp);
-  };
+    };
 
-  const accordionClick = e => {
-    e.preventDefault()
+    const accordionClick = e => {
+      e.preventDefault()
 
-    const
-      target = e.target,
-      accordion = target.closest('.rmr-accordion'),
-      toggle = accordion.querySelector('.rmr-accordion-toggle'),
-      collapsible = document.getElementById(
-        toggle.getAttribute('aria-controls')
-      );
+      const
+        target = e.target,
+        accordion = target.closest('.rmr-accordion'),
+        toggle = accordion.querySelector('.rmr-accordion-toggle'),
+        collapsible = document.getElementById(
+          toggle.getAttribute('aria-controls')
+        );
 
-    if (! collapsible) {
-      return;
-    }
+      if (! collapsible) {
+        return;
+      }
 
-    if (toggle.getAttribute('aria-expanded') === 'false') {
-      toggle.setAttribute('aria-expanded', 'true');
-      expand(collapsible);
-      collapsible.removeAttribute('aria-hidden');
-      accordion.classList.add('rmr-open');
-    } else {
-      toggle.setAttribute('aria-expanded', 'false');
-      collapse(collapsible);
-      accordion.classList.remove('rmr-open');
-    }
-  };
+      if (toggle.getAttribute('aria-expanded') === 'false') {
+        toggle.setAttribute('aria-expanded', 'true');
+        expand(collapsible);
+        collapsible.removeAttribute('aria-hidden');
+        accordion.classList.add('rmr-open');
+      } else {
+        toggle.setAttribute('aria-expanded', 'false');
+        collapse(collapsible);
+        accordion.classList.remove('rmr-open');
+      }
+    };
 
-  const enhanceMarkup = (accordion, index) => {
 
     const
       id = `rmr-accordion-${index}`,
@@ -89,30 +91,29 @@
     collapsible.setAttribute('id', id);
 
     pane.appendChild(collapsible);
-    children.forEach( node => {
+    children.forEach(node => {
       collapsible.appendChild(node)
-    })
-
+    });
 
     if (button) {
       button.setAttribute('aria-expanded', isOpen);
       button.setAttribute('aria-controls', id);
     }
     title.addEventListener('click', accordionClick);
-
     accordion.setAttribute('data-rmr-init', true);
   };
 
-  const initAccordions = () => {
+
+  const initAccordions = (config) => {
 
     let
       count = 0,
       accordion;
-    // enhance any accordions that are found including nested accordions
+
     while ((count === 0) || accordion) {
       accordion = document.querySelector('.rmr-accordion:not([data-rmr-init]');
       if (accordion) {
-        enhanceMarkup(accordion, count);
+        enhanceMarkup(accordion, count, config);
       }
       count++;
     }

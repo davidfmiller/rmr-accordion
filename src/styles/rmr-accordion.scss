@@ -9,7 +9,7 @@
   transition: transform $rmr-transition-duration-short;
 }
 
-.rmr-accordion.rmr-open .rmr-accordion-toggle {
+.rmr-accordion-toggle[aria-expanded=true] {
   transform: rotate(-180deg);
 }
 
