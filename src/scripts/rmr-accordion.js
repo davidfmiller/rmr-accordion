@@ -83,7 +83,7 @@
 
     const
       id = `rmr-accordion-${index}`,
-      isOpen = accordion.classList.contains('rmr--open'),
+      isOpen = accordion.classList.contains('rmr-open'),
       title = accordion.querySelector('.rmr-accordion-title'),
       button = accordion.querySelector('.rmr-accordion-toggle'),
       pane = accordion.querySelector('.rmr-accordion-pane'),

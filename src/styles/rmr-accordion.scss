@@ -1,8 +1,8 @@
-@import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
+@import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
 .rmr-accordion-toggle {
   cursor: pointer;
-  transition: transform $rmr-transition-duration-short;
+  transition: all $rmr-transition-duration-short;
 }
 
 .rmr-accordion-toggle[aria-expanded=true] {
