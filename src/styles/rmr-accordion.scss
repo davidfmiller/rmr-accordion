@@ -1,11 +1,9 @@
 
 @import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
 
-/*
- base styles for rmr-drops; override / supplement to customize the appearance to your desire
-*/
 
 .rmr-accordion-toggle {
+  cursor: pointer;
   transition: transform $rmr-transition-duration-short;
 }
 
@@ -15,6 +13,10 @@
 
 .rmr-accordion-title {
   cursor: pointer;
+}
+
+.rmr-accordion.rmr-disabled .rmr-accordion-title {
+  cursor: not-allowed;
 }
 
 .rmr-accordion-contents[aria-hidden='true'] {

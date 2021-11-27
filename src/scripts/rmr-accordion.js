@@ -60,6 +60,10 @@
           toggle.getAttribute('aria-controls')
         );
 
+      if (accordion.classList.contains('rmr-disabled')) {
+        return;
+      }
+
       if (! collapsible) {
         return;
       }
