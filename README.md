@@ -1,3 +1,3 @@
-# rmr-carousel
+# rmr-accordion
 
-[my last carousel](https://davidfmiller.github.io/rmr-carousel/)
+[my last accordion](https://davidfmiller.github.io/rmr-accordion/)
