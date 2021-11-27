@@ -1,0 +1,30 @@
+@import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
+@import "../../node_modules/rmr-util/src/styles/_rmr-mixins.scss";
+
+/*
+  override styles from man.css and other page-specific styles
+*/
+
+body {
+  background: green;
+}
+
+// .rmr-accordion {
+// //  background: green;
+//   width: 50%;
+//   padding-bottom: 50px;
+// }
+
+
+// button.rmr-prev {
+//   width: 30px;
+//   height: 30px;
+//   display: block;
+//   border: none;
+// }
+// button.rmr-next {
+//   width: 30px;
+//   height: 30px;
+//   display: block;
+//   border: none;
+// }

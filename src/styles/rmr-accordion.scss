@@ -1,0 +1,32 @@
+
+@import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
+
+/*
+ base styles for rmr-drops; override / supplement to customize the appearance to your desire
+*/
+
+.rmr-accordion-toggle {
+  transition: transform $rmr-transition-duration-short;
+}
+
+.rmr-accordion.rmr-open .rmr-accordion-toggle {
+  transform: rotate(-180deg);
+}
+
+.rmr-accordion-title {
+  cursor: pointer;
+}
+
+.rmr-accordion-contents[aria-hidden='true'] {
+  height: 0;
+}
+
+.rmr-accordion-contents {
+  overflow: hidden;
+  transition: height $rmr-transition-duration-short ease-out;
+
+  &[aria-hidden=true] > * {
+    opacity: 0;
+  }
+}
+
