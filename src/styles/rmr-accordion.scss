@@ -1,6 +1,4 @@
-
 @import "../../node_modules/rmr-util/src/styles/_rmr-vars.scss";
-
 
 .rmr-accordion-toggle {
   cursor: pointer;
@@ -15,8 +13,11 @@
   cursor: pointer;
 }
 
-.rmr-accordion.rmr-disabled .rmr-accordion-title {
-  cursor: not-allowed;
+.rmr-accordion.rmr-disabled {
+  .rmr-accordion-toggle,
+  .rmr-accordion-title {
+    cursor: not-allowed;
+  }
 }
 
 .rmr-accordion-contents[aria-hidden='true'] {
