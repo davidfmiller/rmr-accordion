@@ -11,6 +11,10 @@ body {
   margin: 25px auto;
 }
 
+p {
+  margin: 1em 0;
+}
+
 .rmr-disabled {
   opacity: 0.3;
 }
@@ -30,6 +34,9 @@ dl {
   margin: 0;
   padding: 0;
 }
+dl p {
+  margin: 0 0 1em 0;
+}
 dd {
   margin: 0;
   padding: 0;
@@ -40,12 +47,15 @@ hr {
   height: 1px;
   background: #ddd;
   border: none;
+}
 
+a:hover {
+  color: red;
 }
 
 .rmr-accordion:not(.rmr-disabled)  {
   background: rgba(0,0,0,0.05);
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 
   & > .rmr-accordion-title:hover {
@@ -53,7 +63,7 @@ hr {
       text-decoration: underline;
     }
     & > .rmr-accordion-toggle {
-      background: yellow;
+//      background: yellow;
     }
   }
 }
@@ -69,10 +79,6 @@ hr {
   font-weight: bold;
 }
 
-p {
-  margin: 0 0 1em 0;
-  padding: 0;
-}
 
 .rmr-aspect {
   margin: 5px 0 0 0;
@@ -81,9 +87,16 @@ p {
 .rmr-accordion-toggle {
   width: 20px;
   height: 20px;
-  border-radius: 20px;
-  background: red;
+  border-radius: 50%;
+  background: white;
+
+  background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyBoZWlnaHQ9IjE1IiB2aWV3Qm94PSIwIDAgMjYgMTUiIHdpZHRoPSIyNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjQuMDQ2NTY4MyAxMC45MDE5NjM4Yy43ODEwNDg2Ljc4MTA0ODYuNzgxMDQ4NiAyLjA0NzM3ODUgMCAyLjgyODQyNzEtLjczOTk0MDguNzM5OTQwOC0xLjkxNTQyNDkuNzc4ODg1LTIuNzAxMjEyNC4xMTY4MzI4bC0uMTI3MjE0Ny0uMTE2ODMyOC04LjE5NDgyNzMtOC4xOTQxMzY1NWMtLjM5MDU3Ny0uMzkwNDI0OTYtMS4wMjM2OTYtLjM5MDQyNDk2LTEuNDE0MjczMSAwbC04LjE5NDgyNzI0IDguMTk0MTM2NTVjLS43Mzk5NDA3Ni43Mzk5NDA4LTEuOTE1NDI0OTIuNzc4ODg1LTIuNzAxMjEyMzUuMTE2ODMyOGwtLjEyNzIxNDc3LS4xMTY4MzI4Yy0uNzM5OTQwNzctLjczOTk0MDctLjc3ODg4NTAyLTEuOTE1NDI0OS0uMTE2ODMyNzUtMi43MDEyMTIzbC4xMTY4MzI3NS0uMTI3MjE0OCAxMC4zMTYxNzczNi0xMC4zMTYxNzczNmMuNzM5OTQwOC0uNzM5OTQwNzcgMS45MTU0MjQ5LS43Nzg4ODUwMiAyLjcwMTIxMjQtLjExNjgzMjc1bC4xMjcyMTQ3LjExNjgzMjc1eiIgZmlsbD0iIzIyMiIgdHJhbnNmb3JtPSJtYXRyaXgoLTEgMCAwIC0xIDI1LjQ3NDI2NSAxNC40NzQyNjcpIi8+PC9zdmc+);
+  background-size: 50% 50%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   border: none;
+  text-indent: -1000em;
+  overflow: hidden;
   &:hover {
 //    background: yellow;
   }
