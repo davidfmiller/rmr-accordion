@@ -55,10 +55,10 @@
       const
         target = e.target,
         accordion = target.closest('.rmr-accordion'),
-        toggle = accordion.querySelector('.rmr-accordion-toggle'),
-        collapsible = document.getElementById(
+        toggle = accordion.querySelector(':scope > .rmr-accordion-title .rmr-accordion-toggle'),
+        collapsible = toggle ? document.getElementById(
           toggle.getAttribute('aria-controls')
-        );
+        ) : null;
 
       if (accordion.classList.contains('rmr-disabled')) {
         return;
