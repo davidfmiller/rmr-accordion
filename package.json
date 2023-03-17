@@ -22,11 +22,11 @@
     "eslint": "^8.2.0",
     "grunt": "^1.6.1",
     "grunt-contrib-compass": "^0.8.0",
-    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.1.0",
     "uglify-es": "^3.3.4",
-    "webpack": "^4.42.0"
+    "webpack": "^5.76.2"
   },
   "dependencies": {
     "rmr-util": "^1.1.86"
