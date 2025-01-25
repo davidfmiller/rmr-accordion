@@ -112,11 +112,12 @@
     let
       i = 0,
       n;
-
-    const acc = document.location.hash ? document.querySelector(document.location.hash) : null;
-    if (acc && acc.classList.contains('rmr-accordion')) {
-      acc.classList.add('rmr-open');
-    }
+    try {
+      const acc = document.location.hash ? document.querySelector(document.location.hash) : null;
+      if (acc && acc.classList.contains('rmr-accordion')) {
+        acc.classList.add('rmr-open');
+      }
+    } catch (e) {}
 
     while (i === 0 || n) {
       n = document.querySelector('.rmr-accordion:not([data-rmr-init]');
